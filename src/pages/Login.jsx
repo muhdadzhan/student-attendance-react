@@ -12,7 +12,7 @@ function Login(){
     const handleLogin = async (e) => {
         e.preventDefault();
         try{
-            const res = await API.post('/login', {email, password});
+            const res = await API.post('/login', {email, password}, {withCredentials: true});
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('role', res.data.role);
             navigate('/');

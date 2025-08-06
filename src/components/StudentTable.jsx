@@ -7,7 +7,7 @@ function StudentTable(){
     const [students, setStudents] = useState([]);
 
     useEffect(() => {
-        API.get('/students')
+        API.get('/student')
             .then((res) => setStudents(res.data))
             .catch((err) => console.error(err));
     }, []);
@@ -27,7 +27,7 @@ function StudentTable(){
                     <tr key={s.id}>
                     <td>{s.id}</td>
                     <td>{s.name}</td>
-                    <td>{s.class}</td>
+                    <td>{s.class_name}</td>
                     </tr>
                 ))}
                 </tbody>
